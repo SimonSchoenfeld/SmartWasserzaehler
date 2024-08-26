@@ -40,6 +40,9 @@ Um die Postition des Zeigers innerhalb des ausgewählten Kreises zu ermitteln, w
 > Dieser Teil bereitet momentan die meisten Probleme. Wenn diese Ziffern falsch ausgelesen werden, ist der gesamte Datensatz nicht verwendbar. 
 
 #### pytesseract:
-
+Der Erste Ansatz bestand daraus, ein einzelnes Rechteck aus dem Bild auszuschneiden, in dem alle Ziffern enthalten sind. Diese Ziffern sollten dann mit der "pytesseract" libary ausgelesen werden.
+Leider ist diese libary darauf ausgelegt ganze Texte zu lesen. Zudem erkennt sie eine "1" nur mit haken. Die Ergebnisse waren demnach zu oft unvollständig und fehlerhaft. 
 
 #### mnist Model:
+Der zweite Ansatz nutzt das mnist Model (ein KI Modell zum erkennen handgeschriebener Buchstaben). Dabei werden im Interface für jede Ziffer einzelne Rechtecke festgelegt, welche dann in das vortrainierte model gefüttert werden. Leider ist auch diese Methode bis jetzt auch noch zu Ungenau um verlässliche Werte auszugeben. 
+
