@@ -29,11 +29,17 @@ In einem Einstellungs Menü sollen zudem die Bildbereiche ausgewählt werden, we
 In den Einstellungen auf der Website ist das Gesamte Bild der Kamera zu sehen. Durch das Drücken von Tasten lassen sich die zu scanneden Bereiche auswählen, welche die Ziffern anzeigen. Für die tatsächlichen Ziffern sind diese Bereiche Rechtecke, für die Zeiger sind es Kreise.
 Speichert man die Einstellungen, werden die jeweiligen Koordinaten in einer .json Datei im Backend abgespeichert. 
 
+<img src="images/interface.png" height = 300>
+
 ## Kameraprogramm:
 Auf dem Raspberry Pi läuft ein Python Programm, welches für die Dokumentierung der Daten zuständig ist. Es nutzt die Koordinaten aus der .json Datei und extrahiert die Ziffern mit folgenden Methoden:
 
 ### Zeiger auslesen:
 Um die Postition des Zeigers innerhalb des ausgewählten Kreises zu ermitteln, wird der Mittelpunkt des Kreises genutz. Dieser liegt, sofern der Kreis richtig plaziert wurde, auf dem Mittelpunkt des Zeigers. Von diesem Mittelpunkt wird der Farbwert entnommen. Danach wird in einem Festgelegten Radius um den Mittelpunkt geguckt, an welcher Stelle der Farbwert am weitesten mit dem des Zeigers übereinstimmt. Dann wird eine Linie zwischen Mittelpunkt und diesem Punkt eingezeichnet und der Winkel dieser Linie zu einer Senkrechten berechnet, aus dem schließlich der Zeigerstand berechnet werden kann. 
+
+<img src="images/zeiger1.png" height = 150>
+<img src="images/zeiger2.png" height = 150>
+<img src="images/zeiger3.png" height = 150>
 
 ### Ziffern auslesen: 
 >[!NOTE]
