@@ -15,6 +15,9 @@ Dieses Repository befasst sich mit einem Raspberry Pi Projekt, bei dem die Werte
  #### Kamera
  Mit Hilfe einer Kamera können die Ziffern und Zeiger des Wasserzählers aufgenommen und ausgelesen werden. Das Programm muss somit nicht dauerhaft aktiv sein, sondern kann einfach den aktuellen Zählerstand auslesen. 
 
+ <img src="images/aufbau01.png" width = 350>
+ <img src="images/aufbau02.png" width = 350>
+
 Obwohl die zweite Methode zugegebenermaßen deutlich komplizierter und aufwändiger ist als es sein müsste entschied ich mich dazu eine Kamera zu nutzen. Dies lag zum einen daran, dass ich die nötigen Materialien bei mir hatte und dass die Programierung deutlich spannender wirkte. Eventuell baue ich irgendwann eine weitere Version mit einem ESP32 und einem Hall-Sensor
 
 ### Datenbank: 
@@ -29,7 +32,7 @@ In einem Einstellungs Menü sollen zudem die Bildbereiche ausgewählt werden, we
 In den Einstellungen auf der Website ist das Gesamte Bild der Kamera zu sehen. Durch das Drücken von Tasten lassen sich die zu scanneden Bereiche auswählen, welche die Ziffern anzeigen. Für die tatsächlichen Ziffern sind diese Bereiche Rechtecke, für die Zeiger sind es Kreise.
 Speichert man die Einstellungen, werden die jeweiligen Koordinaten in einer .json Datei im Backend abgespeichert. 
 
-<img src="images/interface.png" height = 300>
+<img src="images/interface.png" width = 450>
 
 ## Kameraprogramm:
 Auf dem Raspberry Pi läuft ein Python Programm, welches für die Dokumentierung der Daten zuständig ist. Es nutzt die Koordinaten aus der .json Datei und extrahiert die Ziffern mit folgenden Methoden:
